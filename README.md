@@ -23,7 +23,7 @@ config:
 
 **keep** means number of snapshot will be retended.
 
-**shutdown** means whether to shutdown backup destination server
+**shutdown** is to shutdown backup destination server or not
 
 Remote destination Pool must have the same structure like the Source Pool
 
