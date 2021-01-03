@@ -26,3 +26,7 @@ Remote destination Pool must have the same structure like the Source Pool
 Create a cron job to run zfs_backup.py on daily basis and you are all set, e.g. runs on everyday 2am
 
 0 2 * * * /usr/local/bin/zfs_backup.py
+
+For PVE after backup hook you can edit /etc/pve/vzdump.cron and use the --script  to execute
+
+0 0 * * 1,3,5       root vzdump 100 101 102 103 104 105 106 108 109 111 114 115 118 253 --quiet 1 --storage pbs --mailnotification failure --mode snapshot --script /usr/local/bin/zfs_backup.py
