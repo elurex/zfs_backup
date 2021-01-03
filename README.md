@@ -19,7 +19,7 @@ config:
     keep: 10
     shutdown: 1
 ```
-**remote_address** can supply with username/password or with key using **-i**
+**remote_address** remote backup host or fqdn must include identification file key using **-i**
 
 **keep** means number of snapshot will be retended.
 
