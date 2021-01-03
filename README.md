@@ -35,5 +35,5 @@ Create a cron job to run zfs_backup.py on daily basis and you are all set, e.g. 
 ```
 For PVE after backup hook script you can edit **/etc/pve/vzdump.cron** and use the **--script**  to execute
 ``` BASH
-0 0 * * *       root vzdump 100 101 102 103 104 105 106 108 109 111 114 115 118 253 --quiet 1 --storage pbs --mailnotification failure --mode snapshot --script /usr/local/bin/zfs_backup.py
+0 0 * * 1,3,5       root vzdump 100 101 102 103 104 105 106 108 109 111 114 115 118 253 --quiet 1 --storage pbs --mailnotification failure --mode snapshot --script /usr/local/bin/zfs_backup.py
 ```
