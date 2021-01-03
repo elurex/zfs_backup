@@ -27,7 +27,7 @@ config:
 
 make sure to give execute permission to /usr/local/bin/zfs_backup.py  chmod +x /usr/local/bin/zfs_backup.py
 
-Remote destination Pool must have the same structure like the Source Pool
+Remote Destination Pool must have the same structure like the Source Pool
 
 Create a cron job to run zfs_backup.py on daily basis and you are all set, e.g. runs on everyday 2am
 ``` BASH
