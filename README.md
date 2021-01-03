@@ -20,7 +20,10 @@ config:
     shutdown: 1
 ```
 remote_address can supply with username/password or with key
+
 keep means number of snapshot will be retended.
+
+shutdown means whether to shutdown backup destination server
 
 Remote destination Pool must have the same structure like the Source Pool
 
