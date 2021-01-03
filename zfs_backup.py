@@ -6,6 +6,7 @@ config = yaml.safe_load(open('/etc/zfs_backup_config.yml'))
 pools=config['config']['pools']
 remote_address=config['config']['remote_address']
 retention=config['config']['keep']+1
+shutdown=config['config']['shutdown']
 
 today = date.today()
 yesterday = date.today() - timedelta(1)
@@ -17,9 +18,9 @@ for i in pools:
 
     #check if there is yesterday snapshot
     checksnap = subprocess.Popen("zfs list -t snapshot | grep {}@{}".format(i,yesterday),shell=True, stdout=subprocess.PIPE )
-    checkremote = subprocess.Popen("ssh {} 'zfs list -t snapshot | grep {}@{}'".format(remote_address,i,yesterday),shell=True, stdout=subp$
+    checkremote = subprocess.Popen("ssh {} 'zfs list -t snapshot | grep {}@{}'".format(remote_address,i,yesterday),shell=True, stdout=subprocess.PIPE )
 
-    if(i ==  checksnap.communicate()[0].decode("utf-8").strip().split('@')[0] and i == checkremote.communicate()[0].decode("utf-8").strip($
+    if(i ==  checksnap.communicate()[0].decode("utf-8").strip().split('@')[0] and i == checkremote.communicate()[0].decode("utf-8").strip().split('@')[0]):
         #send incremental snapshot
         subprocess.run("zfs send -i {}@{} {}@{} | ssh {} zfs recv {}".format(i,yesterday,i,today,remote_address,i),shell=True)
         #remove old snapshot
@@ -28,3 +29,6 @@ for i in pools:
         #send complete snapshot since there is no increments
         print("send complete snapshot")
         subprocess.run("zfs send {}@{} | ssh {} zfs recv {} -F".format(i,today,remote_address,i),shell=True)
+
+if(shutdown == 1):
+    subprocess.run("ssh {} init 0".format(remote_address),shell=True)
