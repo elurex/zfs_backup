@@ -34,7 +34,7 @@ for i in pools:
                 for n in range(count - retention):
                     subprocess.run("zfs destroy {}".format(snapshots[n].split(" ")[0]),shell=True)
                     subprocess.run("ssh {} zfs destroy {}".format(remote_address,snapshots[n].split(" ")[0]),shell=True)
-         else:
+        else:
              #send complete snapshot since there is no increments
              subprocess.run("zfs send {}@{} | ssh {} zfs recv {} -F".format(i,today,remote_address,i),shell=True)
     else:
