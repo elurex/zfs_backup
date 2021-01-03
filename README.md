@@ -20,6 +20,7 @@ config:
     shutdown: 1
 ```
 **pools** is a list with **local_dataset,remote_dataset**
+
 **remote_address** remote backup host or fqdn must include identification file key using **-i**
 
 **keep** means number of snapshot will be retended.
