@@ -15,15 +15,15 @@ config:
         - "data/storage/photo"
         - "data/storage/video"
         - "data/template"
-    remote_address: "192.168.249.161"
+    remote_address: "user@192.168.249.161"
     keep: 10
     shutdown: 1
 ```
-remote_address can supply with username/password or with key
+**remote_address** can supply with username/password or with key using **-i**
 
-keep means number of snapshot will be retended.
+**keep** means number of snapshot will be retended.
 
-shutdown means whether to shutdown backup destination server
+**shutdown** means whether to shutdown backup destination server
 
 Remote destination Pool must have the same structure like the Source Pool
 
