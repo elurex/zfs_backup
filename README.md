@@ -15,7 +15,7 @@ config:
         - "data/storage/photo"
         - "data/storage/video"
         - "data/template"
-    remote_address: "user@192.168.249.161"
+    remote_address: "user@192.168.249.161 -i identity_file]"
     keep: 10
     shutdown: 1
 ```
