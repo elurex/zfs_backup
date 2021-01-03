@@ -4,7 +4,7 @@
 
 * config file is hardcoded at /etc/zfs_backup_config.yml
 
-# YAML
+``` YAML
 config:
     pools:
         - "data/home"
@@ -18,3 +18,4 @@ config:
         - "data/template"
     remote_address: "192.168.249.161"
     keep: 10
+````
