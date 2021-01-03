@@ -4,7 +4,7 @@
 
 * config file is hardcoded at /etc/zfs_backup_config.yml
 
-
+# YAML
 config:
     pools:
         - "data/home"
