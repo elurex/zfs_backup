@@ -24,6 +24,6 @@ keep means number of snapshot will be retended.
 
 Remote destination Pool must have the same structure like the Source Pool
 
-Create a cron job to run zfs_backup.py on daily basis and you are all set, e.go
+Create a cron job to run zfs_backup.py on daily basis and you are all set, e.g. runs on everyday 2am
 
-0 2 * * * /usr/local/script/zfs_backup.py
+0 2 * * * /usr/local/bin/zfs_backup.py
