@@ -37,3 +37,4 @@ For PVE after backup hook script you can edit **/etc/pve/vzdump.cron** and use t
 ``` BASH
 0 0 * * 1,3,5       root vzdump 100 101 102 103 104 105 106 108 109 111 114 115 118 253 --quiet 1 --storage pbs --mailnotification failure --mode snapshot --script /usr/local/bin/zfs_backup.py
 ```
+Please Note,if you edit the backup job in PVE Web GUI, --script will be removed and you must add to the cron again
