@@ -1,7 +1,7 @@
 ### Using Python 3.7 or above
 
 * you need to install pyyaml: pip3 install pyyaml
-
+* first backup will be full snapshot and afterwards it will be incremental snapshot only
 * config file is hardcoded at /etc/zfs_backup_config.yml
 
 ``` YAML
