@@ -17,6 +17,7 @@ config:
         - "data/template"
     remote_address: "192.168.249.161"
     keep: 10
+    shutdown: 1
 ```
 remote_address can supply with username/password or with key
 keep means number of snapshot will be retended.
