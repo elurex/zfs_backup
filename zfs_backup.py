@@ -24,6 +24,7 @@ for i in pools:
         #send incremental snapshot
         subprocess.run("zfs send -i {}@{} {}@{} | ssh {} zfs recv {}".format(i,yesterday,i,today,remote_address,i),shell=True)
         #remove old snapshot
+        subprocess.run("zfs destroy {}@{}".format(i,daytoremove),shell=True)
         subprocess.run("ssh {} zfs destroy {}@{}".format(remote_address,i,daytoremove),shell=True)
     else:
         #send complete snapshot since there is no increments
