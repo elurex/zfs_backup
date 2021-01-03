@@ -18,4 +18,8 @@ config:
         - "data/template"
     remote_address: "192.168.249.161"
     keep: 10
-````
+```
+remote_address can supply with username/password or with key
+keep means number of snapshot will be retended.
+
+Remote destination Pool must have the same structure like the Source Pool
