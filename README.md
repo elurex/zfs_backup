@@ -9,7 +9,6 @@ config:
     pools:
         - "data/home"
         - "data/storage/application"
-        - "data/storage/av"
         - "data/storage/downloads"
         - "data/storage/kids"
         - "data/storage/music"
