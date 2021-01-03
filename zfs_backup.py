@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import subprocess, yaml
-from datetime import date, timedelta
+from datetime import datetime
 
 config = yaml.safe_load(open('/etc/zfs_backup_config.yml'))
 pools=config['config']['pools']
@@ -8,9 +8,7 @@ remote_address=config['config']['remote_address']
 retention=config['config']['keep']+1
 shutdown=config['config']['shutdown']
 
-today = date.today()
-yesterday = date.today() - timedelta(1)
-daytoremove = date.today() - timedelta(retention)
+today = datetime.now().strftime("%Y-%m-%d-%H%M%S")
 
 for i in pools:
     
