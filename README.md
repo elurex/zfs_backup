@@ -23,3 +23,5 @@ remote_address can supply with username/password or with key
 keep means number of snapshot will be retended.
 
 Remote destination Pool must have the same structure like the Source Pool
+
+Create a cron job to run zfs_backup.py on daily basis and you are all set
