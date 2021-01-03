@@ -19,7 +19,7 @@ config:
     keep: 10
     shutdown: 1
 ```
-**pools** is a list with **local_dataset,remote_dataset**
+**pools** is an array list with **local_dataset,remote_dataset**
 
 **remote_address** remote backup host or fqdn must include identification file key using **-i**
 
