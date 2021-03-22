@@ -1,0 +1,13 @@
+config:
+    pools:
+        - "data/home,backup/server1/home"
+        - "data/storage/application,backup/server1/storage/application"
+        - "data/storage/downloads,backup/server1/storage/av"
+        - "data/storage/kids,backup/server1/storage/kids"
+        - "data/storage/music,backup/server1/storage/music"
+        - "data/storage/photo,backup/server1/storage/photo"
+        - "data/storage/video,backup/server1/storage/video"
+        - "data/template,backup/server1/template"
+    remote_address: "user@192.168.249.161 -i identity_file"
+    keep: 10
+    shutdown: 1

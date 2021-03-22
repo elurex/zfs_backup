@@ -7,18 +7,20 @@
 ``` YAML
 config:
     pools:
-        - "data/home"
-        - "data/storage/application"
-        - "data/storage/downloads"
-        - "data/storage/kids"
-        - "data/storage/music"
-        - "data/storage/photo"
-        - "data/storage/video"
-        - "data/template"
+        - "data/home,backup/server1/home"
+        - "data/storage/application,backup/server1/storage/application"
+        - "data/storage/downloads,backup/server1/storage/av"
+        - "data/storage/kids,backup/server1/storage/kids"
+        - "data/storage/music,backup/server1/storage/music"
+        - "data/storage/photo,backup/server1/storage/photo"
+        - "data/storage/video,backup/server1/storage/video"
+        - "data/template,backup/server1/template"
     remote_address: "user@192.168.249.161 -i identity_file"
     keep: 10
     shutdown: 1
 ```
+**pools** is an array list with **local_dataset,remote_dataset**
+
 **remote_address** remote backup host or fqdn must include identification file key using **-i**
 
 **keep** means number of snapshot will be retended.
@@ -26,8 +28,6 @@ config:
 **shutdown** is to shutdown backup destination server or not
 
 make sure to give execute permission to /usr/local/bin/zfs_backup.py  chmod +x /usr/local/bin/zfs_backup.py
-
-Remote Destination Pool must have the same structure like the Source Pool
 
 Create a cron job to run zfs_backup.py on daily basis and you are all set, e.g. runs on everyday 2am
 ``` BASH
